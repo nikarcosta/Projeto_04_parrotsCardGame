@@ -110,9 +110,17 @@ function desvirarCards(){
 
 
 function verificaFimDoJogo(){
+  let reiniciar = "n";
   const jogadas = document.querySelectorAll(".finalizado"); 
   if(jogadas.length === numCartas){
     alert(`Fim do Jogo! Você ganhou em ${qtdJogadas} jogadas.`);
+    reiniciar = prompt("Deseja reiniciar o jogo? Digite s ou n");
+    if(reiniciar === "s" || reiniciar === "S"){
+      reiniciarJogo();
+    }
   }
 }
   
+function reiniciarJogo(){
+  window.location.reload();
+}
